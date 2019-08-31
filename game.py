@@ -16,24 +16,36 @@ user_score = 0
 computer_score = 0
 
 # call this method if the computer won the match
+# print in table
 def computer_won(current_computer_score):
     new_computer_score = current_computer_score + 1
     print()
-    print('{:15}'.format('Results'))
-    #print(computer_choice + " vs " + user_choice)
-    print('{:5}'.format('Computer') + '{:15}'.format("You"))
-    print('{:5}'.format(computer_choice) + '{:15}'.format(user_choice))
+    # found center align on pyformat.info
+    print('{:^30}'.format('Results'))
     print()
-    print('{:15}'.format("You lost"))
+    #print(computer_choice + " vs " + user_choice)
+    print('{:5} {:13} {:10}'.format('', 'Computer', 'You'))
+    print('{:5} {:13} {:10}'.format('', computer_choice, user_choice))
+    print()
+    print('{:^30}'.format("You lost"))
     print()
     print("Computer: " + str(new_computer_score) + "\tUser: " + str(user_score))
+    print()
     return new_computer_score
 # call this method if the user won the match
+# print in a table
 def user_won(current_user_score):
     new_user_score = current_user_score + 1
-    print(computer_choice + " vs " + user_choice)
-    print("You won!")
+    print()
+    print('{:^30}'.format('Results'))
+    print()
+    print('{:5} {:13} {:10}'.format('', 'Computer', 'You'))
+    print('{:5} {:13} {:10}'.format('', computer_choice, user_choice))
+    print()
+    print('{:^30}'.format("You won!"))
+    print()
     print("Computer: " + str(computer_score) + "\tUser: " + str(new_user_score))
+    print()
     return new_user_score
 
 # Summary
